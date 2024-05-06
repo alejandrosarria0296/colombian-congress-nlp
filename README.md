@@ -23,6 +23,10 @@ This study investigates the utilization of disgust-related language in official 
 - seaborn 0.12.2
 - scipy 1.11.1
 
+## Replication materials
+
+The datasets for replication are in the data folder of this repository. Analyzer_replicati.ipynb and reggresion models.qmd contain the code to replicate this project
+
 ## How to cite
 
 Cite this Repository as: 
