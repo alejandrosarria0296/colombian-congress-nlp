@@ -1,0 +1,57 @@
+---
+title: "Shades of Disdain: Analyzing Disgust in Colombian Congressional Speech Through Word Embeddings"
+author: "Alejandro Sarria Morales"
+format: 
+  pdf:
+    keep-tex: true
+    latex-engine: xelatex
+editor: visual
+---
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#load libraries
+library(tidyverse)
+library(gridExtra)
+library(knitr)
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#load data
+senators = read.csv("senators.csv") |>
+  as_tibble() |>
+  mutate(gender = as.factor(gender),
+         party = as.factor(party),
+         position = as.factor(position),
+         ethnicity = as.factor(ethnicity))
+
+senate = read.csv('senateDF.csv') |>
+  as.tibble()
+
+```
+
+#### Regression models
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+#Using Word2Vec
+model_matrix = model.matrix(~ position + gender + ethnicity - 1,
+                            data = senators)
+
+senators_ols = cbind(model_matrix, senators[,c('disgust_cs')])
+senators_ols$genderxgovernment = senators_ols$gender1 * senators_ols$positiongovernment
+senators_ols = select(senators_ols, -c(positiongovernment))
+fit = lm(disgust_cs ~ ., data = senators_ols)
+
+summary(fit)
+```
+
+```{r, message=FALSE, warning=FALSE}
+#Using GPT embeddings
+model_matrix = model.matrix(~ position + gender + ethnicity - 1,
+                            data = senators)
+
+senators_ols = cbind(model_matrix, senators[,c('disgust_gpt_cs')])
+senators_ols$genderxgovernment = senators_ols$gender1 * senators_ols$positiongovernment
+senators_ols = select(senators_ols, -c(positiongovernment))
+fit2 = lm(disgust_gpt_cs ~ ., data = senators_ols)
+summary(fit2)
+```
