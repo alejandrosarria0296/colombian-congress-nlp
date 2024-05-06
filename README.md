@@ -9,3 +9,18 @@ This study investigates the utilization of disgust-related language in official 
 ## External links
 - Overleaf project: https://www.overleaf.com/project/65ff0d77d77de566e3712366
 - Zotero library: https://www.zotero.org/groups/5461283/macs-3200-sarria-alejandro/library
+
+## Requirements
+- Python 3.11.5
+- spacy 3.7.2
+- pandas 2.0.3
+- requests 2.31.0
+- bs4 4.12.3
+- gensim 4.3.0
+- numpy 1.24.3
+- sklearn 1.4.2
+- matplotlib 3.7.2
+- seaborn 0.12.2
+- scipy 1.11.1
+
+## How to cite
