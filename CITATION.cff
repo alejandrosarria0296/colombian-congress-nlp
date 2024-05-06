@@ -1,0 +1,16 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Shades of disdain: an analysis of disgust in colombian
+  congressional speech through word embeddings
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
+type: dataset
+authors:
+  - given-names: Alejandro
+    family-names: Sarria-Morales
+    email: asarria@uchicago.edu
+    affiliation: University of Chicago
