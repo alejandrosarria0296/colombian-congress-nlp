@@ -24,3 +24,6 @@ This study investigates the utilization of disgust-related language in official 
 - scipy 1.11.1
 
 ## How to cite
+
+Cite this Repository as: 
+> Sarria-Morales, Alejandro, Shades of disdain: an analysis of disgust in colombian congressional speech through word embeddings (2024) GitHub Repository. https://github.com/alejandrosarria0296/colombian-congress-nlp/tree/main
